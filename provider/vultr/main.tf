@@ -85,7 +85,7 @@ resource "null_resource" "setup" {
 
   provisioner "remote-exec" {
     inline = [
-      "dd if=/dev/zero of=/storage bs=1024 count=0 seek=$(echo 1024*1024*${var.loopback_storage_size_gb} | bc)",
+      "dd if=/dev/zero of=/storage bs=1024 count=0 seek=${1024 * 1024 * var.loopback_storage_size_gb}",
       "losetup /dev/loop0 /storage"
     ]
   }
@@ -101,6 +101,7 @@ data "template_file" "interfaces" {
     private_ip                = "${element(data.template_file.private_ips.*.rendered, count.index)}"
   }
 }
+
 
 data "template_file" "private_ips" {
   count = "${var.hosts}"
