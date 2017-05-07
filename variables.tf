@@ -47,7 +47,7 @@ variable "vultr_ssh_keys" {
 }
 
 variable "vultr_region" {
-  default = "9" # Frankfurt
+  default = "24" # Paris
 }
 
 /* dns */

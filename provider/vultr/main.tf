@@ -10,7 +10,7 @@ variable "hostname_format" {
 
 variable "region" {
   type    = "string"
-  default = "9"
+  default = "24"
 }
 
 variable "plan" {
