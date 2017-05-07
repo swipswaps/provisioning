@@ -37,6 +37,19 @@ variable "digitalocean_region" {
   default = "nyc1"
 }
 
+/* vultr */
+variable "vultr_token" {
+  default = ""
+}
+
+variable "vultr_ssh_keys" {
+  default = []
+}
+
+variable "vultr_region" {
+  default = "9" # Frankfurt
+}
+
 /* dns */
 variable "cloudflare_email" {
   default = ""

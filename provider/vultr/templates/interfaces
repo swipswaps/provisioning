@@ -1,0 +1,5 @@
+auto ${private_network_interface}
+iface ${private_network_interface} inet static
+  address ${private_ip}
+  netmask 255.255.0.0
+  mtu 1450

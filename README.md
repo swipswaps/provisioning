@@ -2,7 +2,7 @@
 
 > This is part of the Hobby Kube project. Functionality of the modules is described in the [guide](https://github.com/hobby-kube/guide).
 
-Deploy a secure Kubernetes cluster on [Scaleway](https://www.scaleway.com/) or [DigitalOcean](https://www.digitalocean.com/) using [Terraform](https://www.terraform.io/).
+Deploy a secure Kubernetes cluster on [Scaleway](https://www.scaleway.com/), [DigitalOcean](https://www.digitalocean.com/) or [Vultr](https://www.vultr.com/) using [Terraform](https://www.terraform.io/).
 
 ## Setup
 
@@ -33,6 +33,15 @@ export TF_VAR_scaleway_token=<TOKEN>
 export TF_VAR_digitalocean_token=<token>
 export TF_VAR_digitalocean_ssh_keys=<keys> # e.g. '["121671", "1714133"]'
 ```
+
+#### Using Vultr as provider
+
+```sh
+export TF_VAR_vultr_token=<api_key>
+export TF_VAR_vultr_ssh_keys=<keys> # e.g. '["121671", "1714133"]'
+```
+
+Please note that this provider does currently NOT delete resources on Vultr when calling `terraform destroy`
 
 #### Using Cloudflare for DNS entries
 

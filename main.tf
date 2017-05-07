@@ -1,4 +1,4 @@
-module "provider" {
+/*module "provider" {
   source = "./provider/scaleway"
 
   organization    = "${var.scaleway_organization}"
@@ -6,7 +6,7 @@ module "provider" {
   hosts           = "${var.hosts}"
   hostname_format = "${var.hostname_format}"
   region          = "${var.scaleway_region}"
-}
+}*/
 
 /*module "provider" {
   source = "./provider/digitalocean"
@@ -17,6 +17,16 @@ module "provider" {
   hostname_format = "${var.hostname_format}"
   region          = "${var.digitalocean_region}"
 }*/
+
+module "provider" {
+  source = "./provider/vultr"
+
+  token           = "${var.vultr_token}"
+  ssh_keys        = "${var.vultr_ssh_keys}"
+  hosts           = "${var.hosts}"
+  hostname_format = "${var.hostname_format}"
+  region          = "${var.vultr_region}"
+}
 
 module "dns" {
   source = "./dns/cloudflare"
